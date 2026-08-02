@@ -2,7 +2,7 @@
 
 Motif atau simbol berulang yang bisa memperkuat kesatuan tematik antar bab (opsional tapi kuat kalau dipakai konsisten).
 
-## Simbol yang Sudah Muncul (Bab 001–003)
+## Simbol yang Sudah Muncul (Bab 001–004)
 
 ### 1. Kursi — Hierarki/Status
 - **Bab kemunculan:** 001 ("Kursi yang Lebih Tinggi")
@@ -31,13 +31,14 @@ Motif atau simbol berulang yang bisa memperkuat kesatuan tematik antar bab (opsi
 
 ## Pola/Benang Merah yang Mulai Terlihat
 
-Ketiga simbol ini **semuanya tentang batas**:
+Keempat simbol ini **semuanya tentang batas**:
 
-| Simbol | Jenis batas | Konteks |
-|---|---|---|
-| Kursi | Batas posisi | Siapa boleh duduk tinggi, siapa di tanah |
-| Piring | Batas konsumsi | Kapan "cukup" berhenti, kapan "lebih" dimulai |
-| Ambang | Batas kebaikan | Sampai mana "baik" boleh masuk |
+| Simbol | Jenis batas | Konteks | Berfungsi? |
+|---|---|---|---|
+| Kursi | Batas posisi | Siapa boleh duduk tinggi, siapa di tanah | Ya — menentukan hierarki |
+| Piring | Batas konsumsi | Kapan "cukup" berhenti, kapan "lebih" dimulai | Ya — menentukan konsumsi |
+| Ambang | Batas kebaikan | Sampai mana "baik" boleh masuk | Ya — menentukan kebaikan |
+| Bangku | Batas kehadiran | Siapa ada, siapa tidak | **Tidak** — tidak menentukan perasaan (subversi) |
 
 Pola yang muncul: **manusia punya batas untuk hal-hal yang di dunia kucing tidak punya batas.** Di dunia kucing, posisi ditentukan oleh kekuatan langsung (tidak ada kursi), konsumsi ditentukan oleh perut (tidak ada piring yang dibuang), kebaikan tidak punya kata (tidak ada ambang — hanya aman/tidak aman). Manusia membuat batas yang tidak ada di alam, lalu hidup di dalam batas itu — kadang tanpa menyadari batas itu ada.
 
@@ -60,6 +61,6 @@ _(belum ada objek/tempat yang muncul berulang di lebih dari satu bab, selain kam
 
 ## Pertanyaan Panduan
 - Apakah simbol ini muncul secara sadar (narator menyadarinya) atau murni buat pembaca yang menyadarinya (narator tidak pernah menyebut secara eksplisit)?
-  - **Jawaban sementara (Bab 1–3):** Murni untuk pembaca. Narator mengamati objek secara fisik (kursi, piring, ambang) tapi tidak pernah menyebutnya sebagai simbol. Pengecualian: ambang pintu di Bab 3, di mana narator secara eksplisit menyebut "ambang adalah tempat yang aneh" — tapi ini kesadaran fisik/fenomenologis, bukan kesadaran simbolik. Makna simbolik tetap murni untuk pembaca.
+  - **Jawaban sementara (Bab 1–4):** Murni untuk pembaca. Narator mengamati objek secara fisik (kursi, piring, ambang) tapi tidak pernah menyebutnya sebagai simbol. Pengecualian: ambang pintu di Bab 3, di mana narator secara eksplisit menyebut "ambang adalah tempat yang aneh" — tapi ini kesadaran fisik/fenomenologis, bukan kesadaran simbolik. Makna simbolik tetap murni untuk pembaca.
 - Apakah pola "batas" disengaja dari awal, atau muncul sendiri dari proses menulis?
   - **Jawaban:** Muncul sendiri. Bab 1, 2, 3 ditulis tanpa rencana eksplisit untuk membuat pola "batas." Pola ini terlihat setelah ketiga bab selesai — saat meninjau kembali. Ini mungkin lebih kuat daripada kalau disengaja, karena tidak terasa dipaksakan.

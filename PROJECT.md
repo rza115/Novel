@@ -6,15 +6,15 @@ Status dan progres proyek. Update tiap ada perubahan berarti.
 _(belum ditentukan)_
 
 ## Status Saat Ini
-🟢 Tahap: Penulisan bab — Bab 1 draft selesai.
+🟢 Tahap: Penulisan bab — Bab 1–4 draft selesai.
 
 ## Milestone
 
 - [ ] StoryBible lengkap (9 file) disetujui
 - [ ] Characters/narrator.md final
 - [ ] Minimal 10 topik di Observations/ terisi
-- [x] Bab 1 ditulis
-- [ ] Bab 1 direview (consistency + style + philosophy)
+- [x] Bab 1–4 ditulis
+- [ ] Bab 1–4 direview (consistency + style + philosophy)
 - [ ] Struktur volume/jumlah bab total ditentukan
 
 ## Log Bab
