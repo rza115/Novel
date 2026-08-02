@@ -48,6 +48,13 @@ Format per tokoh:
 - **Tema yang dia wakili:** Kebaikan yang punya batas teritori — "baik" sampai pintu, tidak lebih
 - **Perkembangan:** Bab 003 = perkenalan. Belum ada perubahan.
 
+## Pak Bangku
+- **Lokasi utama:** Taman — bangku di bawah pohon besar
+- **Peran sosial:** Laki-laki tua (kucing tidak tahu profesi/umur pasti — hanya teramati dari rambut putih dan gerakan lambat)
+- **Kebiasaan yang diamati kucing:** Duduk di bangku yang sama setiap hari, sendirian. Tidak membaca, tidak menatap ponsel. Hanya duduk, menatap ke depan, kadang menutup mata. Kadang menggerakkan bibir tanpa suara — bicara ke udara atau ke diri sendiri. Tidak menunggu apa-apa yang bisa dilihat dari luar.
+- **Tema yang dia wakili:** Kesepian — manusia yang sendirian di tempat ramai, tapi kesepiannya tidak terlihat sebagai kesedihan dari luar
+- **Perkembangan:** Bab 004 = perkenalan. Belum ada perubahan.
+
 ---
 
 _(duplikasi blok di atas untuk tiap tokoh pendukung. Contoh tokoh yang mungkin relevan dengan setting gang/rumah/sekolah/taman/pasar — hapus/sesuaikan:)_

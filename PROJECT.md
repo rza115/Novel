@@ -24,6 +24,7 @@ _(belum ditentukan)_
 | 001 | Kursi yang Lebih Tinggi | Kesombongan | Pasar | draft |
 | 002 | Cukup | Keserakahan | Food Court | draft |
 | 003 | Ambang | Kebaikan | Rumah penduduk sekitar pasar | draft |
+| 004 | Kosong | Kesepian | Taman | draft |
 
 ## Catatan Terbuka / Keputusan Tertunda
 

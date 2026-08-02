@@ -22,6 +22,13 @@ Motif atau simbol berulang yang bisa memperkuat kesatuan tematik antar bab (opsi
 - **Narator sadar secara eksplisit?** Sebagian. Narator secara eksplisit menyebut "ambang adalah tempat yang aneh, bukan dalam, bukan luar" — sadar pada level fisik/fenomenologis. Tapi tidak menyebut ambang sebagai simbol kebaikan yang punya batas. Makna simbolik murni untuk pembaca.
 - **Potensi muncul lagi:** Ambang sekolah (siapa boleh masuk, siapa tidak), ambang gang (batas teritori), ambang kios (siapa dilayani, siapa diabaikan) — bisa muncul dengan variasi makna "batas yang baik tapi tidak boleh dilewati."
 
+### 4. Bangku — Batas Kehadiran (Subversi Pola "Batas")
+- **Bab kemunculan:** 004 ("Kosong")
+- **Makna:** Siapa ada, siapa tidak. Bangku kosong vs bangku berisi. Tapi — **subversi pola "batas"** — batas ini tidak menentukan perasaan. Bangku bisa kosong tapi tidak sedih (kucing tidur di bangku kosong karena hangat), atau berisi dua orang tapi tetap "kosong" (pasangan yang menatap ponsel masing-masing). Batas kehadiran ada, tapi yang menentukan "kosong yang sedih" bukan batasnya, melainkan "seharusnya": sesuatu yang seharusnya ada tapi tidak ada.
+- **Narator sadar secara eksplisit?** Tidak. Narator mengamati bangku secara fisik (kosong/terisi) dan bingung dengan konsep "kosong" yang berbeda di dunia kucing vs manusia. Tidak pernah menyebut "bangku" sebagai simbol. Makna simbolik murni untuk pembaca.
+- **Potensi muncul lagi:** Bangku di sekolah (siapa duduk sendiri, siapa duduk berkelompok), bangku di rumah (bangku tamu yang kosong), bangku di pinggir jalan — bisa muncul dengan variasi makna "kehadiran vs kesepian."
+- **Catatan subversi:** Bab 1–3 simbol "batas" yang **berfungsi** (kursi menentukan hierarki, piring menentukan konsumsi, ambang menentukan kebaikan). Bab 4 simbol "batas" yang **tidak berfungsi** (bangku tidak menentukan kesepian). Ini menjaga pola tetap hidup sekaligus mengajukan pertanyaan baru: kalau batas tidak menentukan perasaan, apa yang menentukan?
+
 ## Pola/Benang Merah yang Mulai Terlihat
 
 Ketiga simbol ini **semuanya tentang batas**:
