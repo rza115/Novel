@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Suara dari Ambang — Reader</title>
+<meta name="description" content="Reader untuk novel observasional kucing liar, disusun dari repository GitHub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14122a;
+    --bg-deep: #0e0c1f;
+    --panel: #1c1936;
+    --panel-line: rgba(216,166,87,0.14);
+    --ink: #ece5d6;
+    --ink-dim: #a79cc9;
+    --ink-faint: #6f6690;
+    --gold: #d3a35b;
+    --gold-soft: rgba(211,163,91,0.5);
+    --gold-wash: rgba(211,163,91,0.09);
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Inter", system-ui, sans-serif;
+    --max-w: 640px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    min-height: 100vh;
+  }
+
+  /* subtle grain / vignette so the dark bg doesn't feel flat */
+  body::before{
+    content:"";
+    position: fixed; inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse 900px 600px at 15% -5%, rgba(211,163,91,0.06), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 100%, rgba(90,70,140,0.15), transparent 55%);
+    z-index: 0;
+  }
+
+  a { color: var(--gold); }
+
+  /* mobile-only overlay backdrop — must be display:none/position:fixed at
+     EVERY viewport width by default, otherwise it sits in the .shell grid
+     as a normal in-flow item and steals the sidebar's grid column. */
+  .scrim{
+    display:none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,7,18,0.55);
+    z-index: 15;
+  }
+  .scrim.open{ display:block; }
+
+  /* ---------- layout shell ---------- */
+  .shell{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---------- sidebar ---------- */
+  .sidebar{
+    background: var(--panel);
+    border-right: 1px solid var(--panel-line);
+    padding: 28px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .brand{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .brand .mark{
+    width: 26px; height: 26px;
+    opacity: 0.9;
+  }
+  .brand h1{
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 8px 0 0;
+  }
+  .brand p{
+    font-family: var(--sans);
+    font-size: 11.5px;
+    color: var(--ink-faint);
+    margin: 2px 0 0;
+    line-height: 1.5;
+  }
+
+  .chapter-nav{
+    display:flex;
+    flex-direction:column;
+    gap: 2px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .nav-label{
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 4px 0 6px;
+  }
+
+  .chapter-link{
+    display:flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 6px;
+    text-decoration:none;
+    color: var(--ink-dim);
+    font-family: var(--sans);
+    font-size: 13.5px;
+    cursor:pointer;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .chapter-link .num{
+    font-family: var(--serif);
+    font-size: 12px;
+    color: var(--ink-faint);
+    min-width: 18px;
+  }
+  .chapter-link .title{
+    flex:1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .chapter-link .dot{
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold-soft);
+    flex-shrink:0;
+    opacity: 0;
+  }
+  .chapter-link.read .dot{ opacity: 1; }
+  .chapter-link:hover{
+    background: var(--gold-wash);
+    color: var(--ink);
+  }
+  .chapter-link.active{
+    background: var(--gold-wash);
+    border-color: var(--panel-line);
+    color: var(--gold);
+  }
+  .chapter-link.active .num{ color: var(--gold); }
+
+  .sidebar-foot{
+    font-family: var(--sans);
+    font-size: 10.5px;
+    color: var(--ink-faint);
+    padding-top: 12px;
+    border-top: 1px solid var(--panel-line);
+    line-height: 1.6;
+  }
+  .sidebar-foot a{ color: var(--ink-dim); text-decoration: none; }
+  .sidebar-foot a:hover{ color: var(--gold); }
+
+  /* ---------- main reading column ---------- */
+  main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .progress-track{
+    position: sticky;
+    top: 0;
+    height: 2px;
+    background: var(--panel-line);
+    z-index: 5;
+  }
+  .progress-fill{
+    height: 100%;
+    width: 0%;
+    background: var(--gold);
+    transition: width 0.1s linear;
+  }
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 16px 28px;
+    gap: 12px;
+  }
+  .topbar .toolbar{
+    display:flex;
+    align-items:center;
+    gap: 6px;
+  }
+  .icon-btn{
+    background: transparent;
+    border: 1px solid var(--panel-line);
+    color: var(--ink-dim);
+    width: 30px; height: 30px;
+    border-radius: 7px;
+    font-family: var(--sans);
+    font-size: 13px;
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .icon-btn:hover{ color: var(--gold); border-color: var(--gold-soft); }
+  .menu-toggle{ display:none; }
+
+  .reader{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    padding: 8px 28px 120px;
+  }
+  .reader-inner{
+    width: 100%;
+    max-width: var(--max-w);
+  }
+
+  .chapter-head{
+    padding-bottom: 26px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .chapter-eyebrow{
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 10px;
+  }
+  .chapter-title{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    font-family: var(--sans);
+  }
+  .meta-chip{
+    font-size: 11.5px;
+    color: var(--ink-dim);
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .meta-chip b{ color: var(--ink-faint); font-weight: 600; }
+
+  .prose{
+    font-size: 19px;
+    line-height: 1.85;
+    color: var(--ink);
+  }
+  .prose p{
+    margin: 0 0 1.25em;
+  }
+  .prose p:first-of-type::first-letter{
+    font-size: 3.1em;
+    font-weight: 600;
+    float: left;
+    line-height: 0.85;
+    padding: 0.05em 0.08em 0 0;
+    color: var(--gold);
+  }
+
+  /* the "ambang" divider — the signature element:
+     a thin threshold line with a paw crossing it */
+  .ambang{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin: 2.6em 0;
+    height: 22px;
+    position: relative;
+  }
+  .ambang::before, .ambang::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: linear-gradient(90deg, transparent, var(--panel-line));
+  }
+  .ambang::after{ background: linear-gradient(90deg, var(--panel-line), transparent); }
+  .ambang svg{ flex-shrink:0; margin: 0 14px; opacity: 0.75; }
+
+  .chapter-nav-foot{
+    display:flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--panel-line);
+    font-family: var(--sans);
+  }
+  .foot-link{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap: 4px;
+    text-decoration:none;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--panel-line);
+    transition: border-color 0.15s ease, background 0.15s ease;
+    cursor:pointer;
+  }
+  .foot-link:hover{ border-color: var(--gold-soft); background: var(--gold-wash); }
+  .foot-link.next{ text-align:right; align-items:flex-end; }
+  .foot-link .lbl{ font-size: 10.5px; letter-spacing:0.08em; text-transform:uppercase; color: var(--ink-faint); }
+  .foot-link .ttl{ font-family: var(--serif); font-size: 15px; color: var(--ink); }
+  .foot-link.disabled{ opacity: 0.35; pointer-events:none; }
+
+  /* ---------- states ---------- */
+  .state{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap: 14px;
+    min-height: 60vh;
+    text-align:center;
+    color: var(--ink-dim);
+    font-family: var(--sans);
+    font-size: 14px;
+    padding: 0 20px;
+  }
+  .state .spinner{
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--panel-line);
+    border-top-color: var(--gold);
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+  .state .err{ color: var(--gold); font-family: var(--serif); font-size: 17px; }
+  .retry-btn{
+    background: transparent;
+    border: 1px solid var(--gold-soft);
+    color: var(--gold);
+    font-family: var(--sans);
+    font-size: 12.5px;
+    padding: 8px 16px;
+    border-radius: 7px;
+    cursor:pointer;
+  }
+  .retry-btn:hover{ background: var(--gold-wash); }
+
+  /* ---------- font size variants ---------- */
+  body[data-size="sm"] .prose{ font-size: 17px; }
+  body[data-size="lg"] .prose{ font-size: 21px; }
+  body[data-size="xl"] .prose{ font-size: 23px; }
+
+  /* ---------- mobile ---------- */
+  @media (max-width: 860px){
+    .shell{ grid-template-columns: 1fr; }
+    .sidebar{
+      position: fixed;
+      left: 0; top: 0; bottom: 0;
+      width: 82%;
+      max-width: 300px;
+      transform: translateX(-100%);
+      transition: transform 0.22s ease;
+      z-index: 20;
+      box-shadow: 20px 0 40px rgba(0,0,0,0.4);
+    }
+    .sidebar.open{ transform: translateX(0); }
+    .menu-toggle{ display:flex; }
+    .reader{ padding: 8px 18px 100px; }
+    .topbar{ padding: 14px 16px; }
+    .chapter-title{ font-size: 26px; }
+    .prose{ font-size: 17.5px; }
+  }
+</style>
+</head>
+<body data-size="md">
+
+<div class="shell">
+  <div class="scrim" id="scrim"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none">
+        <path d="M9 11c0-3 2-5 4-5s3 2 3 4M20 11c0-3-2-5-4-5s-3 2-3 4" stroke="#d3a35b" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M8 13c0-2.5 3.5-4.5 8-4.5s8 2 8 4.5c0 5.5-3.5 10.5-8 10.5s-8-5-8-10.5Z" stroke="#d3a35b" stroke-width="1.4"/>
+        <circle cx="13" cy="14" r="0.9" fill="#d3a35b"/>
+        <circle cx="19" cy="14" r="0.9" fill="#d3a35b"/>
+      </svg>
+      <h1>Suara dari Ambang</h1>
+      <p>Novel observasional — narator kucing liar. Dibaca langsung dari <span id="repoLabel">GitHub</span>.</p>
+    </div>
+
+    <nav class="chapter-nav" id="chapterNav">
+      <div class="nav-label">Daftar Bab</div>
+      <div id="navList" style="display:flex;flex-direction:column;gap:2px;"></div>
+    </nav>
+
+    <div class="sidebar-foot">
+      Sumber: <a href="#" id="repoLink" target="_blank" rel="noopener">rza115/Novel</a><br>
+      Progres baca disimpan di perangkat ini.
+    </div>
+  </aside>
+
+  <main>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="topbar">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Buka daftar bab">☰</button>
+      <div class="toolbar" style="margin-left:auto;">
+        <button class="icon-btn" id="sizeDown" title="Perkecil teks">A−</button>
+        <button class="icon-btn" id="sizeUp" title="Perbesar teks">A+</button>
+        <button class="icon-btn" id="refreshBtn" title="Muat ulang dari GitHub">⟳</button>
+      </div>
+    </div>
+
+    <div class="reader">
+      <div class="reader-inner" id="readerInner">
+        <div class="state" id="loadingState">
+          <div class="spinner"></div>
+          <div>Mengambil daftar bab dari GitHub…</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- config ----------
+  const OWNER = "rza115";
+  const REPO = "Novel";
+  const BRANCH = "main";
+  const CHAPTERS_DIR = "Chapters";
+  const STORAGE_KEY = "suara-dari-ambang:progress";
+
+  const apiListUrl = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${CHAPTERS_DIR}?ref=${BRANCH}`;
+
+  // ---------- state ----------
+  let chapters = [];       // [{file, num, title, downloadUrl}]
+  let currentIndex = -1;
+  let cache = {};          // file -> parsed chapter object
+
+  // ---------- dom ----------
+  const readerInner = document.getElementById("readerInner");
+  const navList = document.getElementById("navList");
+  const progressFill = document.getElementById("progressFill");
+  const sidebar = document.getElementById("sidebar");
+  const scrim = document.getElementById("scrim");
+  const repoLink = document.getElementById("repoLink");
+  repoLink.href = `https://github.com/${OWNER}/${REPO}`;
+
+  document.getElementById("menuToggle").addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+    scrim.classList.toggle("open");
+  });
+  scrim.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+    scrim.classList.remove("open");
+  });
+
+  document.getElementById("refreshBtn").addEventListener("click", () => {
+    cache = {};
+    init(true);
+  });
+
+  const sizes = ["sm","md","lg","xl"];
+  function setSize(delta){
+    const cur = document.body.getAttribute("data-size") || "md";
+    let idx = sizes.indexOf(cur) + delta;
+    idx = Math.max(0, Math.min(sizes.length - 1, idx));
+    document.body.setAttribute("data-size", sizes[idx]);
+    localStorage.setItem(STORAGE_KEY + ":size", sizes[idx]);
+  }
+  document.getElementById("sizeUp").addEventListener("click", () => setSize(1));
+  document.getElementById("sizeDown").addEventListener("click", () => setSize(-1));
+  const savedSize = localStorage.getItem(STORAGE_KEY + ":size");
+  if (savedSize) document.body.setAttribute("data-size", savedSize);
+
+  window.addEventListener("scroll", () => {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    progressFill.style.width = max > 0 ? `${(scrolled / max) * 100}%` : "0%";
+  });
+
+  // ---------- progress storage ----------
+  function loadProgress(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+    catch(e){ return {}; }
+  }
+  function saveProgress(obj){
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+  }
+  function markRead(file){
+    const p = loadProgress();
+    p.read = p.read || {};
+    p.read[file] = true;
+    p.last = file;
+    saveProgress(p);
+  }
+
+  // ---------- fetch chapter list ----------
+  async function fetchChapterList(){
+    const res = await fetch(apiListUrl, { headers: { "Accept": "application/vnd.github+json" } });
+    if (!res.ok){
+      if (res.status === 403) throw new Error("RATE_LIMIT");
+      throw new Error("LIST_FAILED");
+    }
+    const data = await res.json();
+    if (!Array.isArray(data)) throw new Error("LIST_FAILED");
+
+    const files = data.filter(f => f.type === "file" && /\.md$/i.test(f.name));
+
+    files.sort((a, b) => {
+      const na = parseInt((a.name.match(/(\d+)/) || [0, 0])[1], 10);
+      const nb = parseInt((b.name.match(/(\d+)/) || [0, 0])[1], 10);
+      return na - nb;
+    });
+
+    return files.map(f => ({
+      file: f.name,
+      num: parseInt((f.name.match(/(\d+)/) || [0, 0])[1], 10),
+      downloadUrl: f.download_url,
+      title: null // filled in after first parse, falls back to filename
+    }));
+  }
+
+  // ---------- markdown -> chapter object ----------
+  // Tailored to this novel's own chapter format:
+  //   # Bab NNN — Judul
+  //   **Status:** ... **Lokasi:** ... **Tema utama:** ... **Tokoh yang muncul:** ...
+  //   ---
+  //   prose paragraphs, scenes separated by ---
+  //   ## Catatan Penulis ...   <- stripped from the reading view
+  function parseChapter(raw, fallbackTitle){
+    const lines = raw.replace(/\r\n/g, "\n").split("\n");
+
+    let title = fallbackTitle;
+    let num = null;
+    let metaLine = "";
+    let bodyStart = 0;
+
+    for (let i = 0; i < lines.length; i++){
+      const l = lines[i];
+      const h1 = l.match(/^#\s+Bab\s+(\d+)\s*—?\s*(.*)$/i) || l.match(/^#\s+(.*)$/);
+      if (h1 && title === fallbackTitle && bodyStart === 0 && i < 5){
+        if (h1[2] !== undefined){ num = parseInt(h1[1], 10); title = h1[2].trim(); }
+        else { title = h1[1].trim(); }
+        bodyStart = i + 1;
+      }
+    }
+
+    // Metadata can be split across several bold lines (e.g. Status on its
+    // own line, then Lokasi/Tema/Tokoh/Observation on another). Collect
+    // every line from the title up to the first scene divider ("---") —
+    // that whole block is metadata, never prose — then parse all of it
+    // together instead of assuming it's a single line.
+    let dividerIdx = lines.findIndex((l, i) => i >= bodyStart && l.trim() === "---");
+    if (dividerIdx === -1) dividerIdx = bodyStart; // no divider found, fall back safely
+
+    const metaBlockLines = lines.slice(bodyStart, dividerIdx).filter(l => l.includes("**"));
+    metaLine = metaBlockLines.join(" ");
+    bodyStart = dividerIdx + 1; // skip past the divider itself
+
+    const meta = {};
+    const metaRe = /\*\*(.+?):\*\*\s*([^*]+?)(?=(\*\*|$))/g;
+    let m;
+    while ((m = metaRe.exec(metaLine)) !== null){
+      meta[m[1].trim()] = m[2].trim();
+    }
+
+    // body = everything from bodyStart up to "## Catatan Penulis" (excluded)
+    let bodyLines = lines.slice(bodyStart);
+    const notesIdx = bodyLines.findIndex(l => /^##\s*Catatan Penulis/i.test(l.trim()));
+    if (notesIdx !== -1) bodyLines = bodyLines.slice(0, notesIdx);
+
+    const bodyText = bodyLines.join("\n").trim();
+
+    // split into scenes on lines that are just "---"
+    const scenes = bodyText.split(/\n\s*---\s*\n/).map(s => s.trim()).filter(Boolean);
+
+    return { title, num, meta, scenes };
+  }
+
+  function escapeHtml(s){
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function inlineFormat(s){
+    let out = escapeHtml(s);
+    out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    out = out.replace(/(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)/g, "<em>$1</em>");
+    out = out.replace(/`(.+?)`/g, "<code>$1</code>");
+    return out;
+  }
+
+  function sceneToHtml(scene){
+    return scene.split(/\n\s*\n/)
+      .map(p => p.trim())
+      .filter(Boolean)
+      .map(p => `<p>${inlineFormat(p.replace(/\n/g, " "))}</p>`)
+      .join("\n");
+  }
+
+  const AMBANG_SVG = `<svg width="30" height="14" viewBox="0 0 30 14" fill="none">
+    <path d="M2 12c3-1 5-3 6-6 1 4 3 6 6 6" stroke="#d3a35b" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+    <circle cx="15" cy="4" r="1.3" fill="#d3a35b"/>
+    <path d="M18 12c3-1 5-3 6-6 1 4 3 6 4 6" stroke="#d3a35b" stroke-width="1.1" stroke-linecap="round" fill="none" opacity="0.55"/>
+  </svg>`;
+
+  function metaChips(meta){
+    const order = ["Status", "Lokasi", "Tema utama", "Tokoh yang muncul"];
+    return order
+      .filter(k => meta[k])
+      .map(k => `<span class="meta-chip"><b>${escapeHtml(k)}:</b> ${escapeHtml(meta[k])}</span>`)
+      .join("");
+  }
+
+  // ---------- render ----------
+  function renderNav(){
+    navList.innerHTML = "";
+    const progress = loadProgress();
+    chapters.forEach((c, i) => {
+      const el = document.createElement("div");
+      el.className = "chapter-link" + (i === currentIndex ? " active" : "") + (progress.read && progress.read[c.file] ? " read" : "");
+      el.innerHTML = `<span class="num">${String(c.num).padStart(2,"0")}</span><span class="title">${escapeHtml(c.title || c.file)}</span><span class="dot"></span>`;
+      el.addEventListener("click", () => {
+        loadChapter(i);
+        sidebar.classList.remove("open");
+        scrim.classList.remove("open");
+      });
+      navList.appendChild(el);
+    });
+  }
+
+  function renderChapter(chapterObj, index){
+    const c = chapters[index];
+    const scenesHtml = chapterObj.scenes
+      .map(sceneToHtml)
+      .join(`<div class="ambang">${AMBANG_SVG}</div>`);
+
+    const prevC = chapters[index - 1];
+    const nextC = chapters[index + 1];
+
+    readerInner.innerHTML = `
+      <div class="chapter-head">
+        <p class="chapter-eyebrow">Bab ${String(c.num).padStart(2,"0")}</p>
+        <h1 class="chapter-title">${escapeHtml(chapterObj.title)}</h1>
+        <div class="meta-row">${metaChips(chapterObj.meta)}</div>
+      </div>
+      <div class="prose">${scenesHtml}</div>
+      <div class="chapter-nav-foot">
+        <div class="foot-link prev ${prevC ? "" : "disabled"}" id="prevBtn">
+          <span class="lbl">‹ Sebelumnya</span>
+          <span class="ttl">${prevC ? escapeHtml(prevC.title || prevC.file) : "—"}</span>
+        </div>
+        <div class="foot-link next ${nextC ? "" : "disabled"}" id="nextBtn">
+          <span class="lbl">Berikutnya ›</span>
+          <span class="ttl">${nextC ? escapeHtml(nextC.title || nextC.file) : "—"}</span>
+        </div>
+      </div>
+    `;
+
+    document.title = `${chapterObj.title} — Suara dari Ambang`;
+
+    if (prevC) document.getElementById("prevBtn").addEventListener("click", () => loadChapter(index - 1));
+    if (nextC) document.getElementById("nextBtn").addEventListener("click", () => loadChapter(index + 1));
+
+    window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
+    markRead(c.file);
+    const p = loadProgress();
+    saveProgress(Object.assign(p, { lastIndex: index }));
+  }
+
+  function renderError(message, canRetry){
+    readerInner.innerHTML = `
+      <div class="state">
+        <div class="err">Gagal memuat</div>
+        <div>${escapeHtml(message)}</div>
+        ${canRetry ? '<button class="retry-btn" id="retryBtn">Coba lagi</button>' : ""}
+      </div>
+    `;
+    const btn = document.getElementById("retryBtn");
+    if (btn) btn.addEventListener("click", () => init(true));
+  }
+
+  function renderLoading(text){
+    readerInner.innerHTML = `
+      <div class="state">
+        <div class="spinner"></div>
+        <div>${escapeHtml(text)}</div>
+      </div>
+    `;
+  }
+
+  // ---------- load a single chapter ----------
+  async function loadChapter(index){
+    currentIndex = index;
+    renderNav();
+    const c = chapters[index];
+
+    if (cache[c.file]){
+      renderChapter(cache[c.file], index);
+      return;
+    }
+
+    renderLoading(`Memuat "${c.file}"…`);
+    try {
+      const res = await fetch(c.downloadUrl);
+      if (!res.ok) throw new Error("CHAPTER_FAILED");
+      const raw = await res.text();
+      const parsed = parseChapter(raw, c.file.replace(/\.md$/i, ""));
+      c.title = parsed.title;
+      c.num = parsed.num || c.num;
+      cache[c.file] = parsed;
+      renderNav();
+      renderChapter(parsed, index);
+    } catch (e){
+      renderError(`Tidak bisa mengambil "${c.file}" dari GitHub. Periksa koneksi lalu coba lagi.`, true);
+    }
+  }
+
+  // ---------- boot ----------
+  async function init(forceReload){
+    renderLoading("Mengambil daftar bab dari GitHub…");
+    try {
+      chapters = await fetchChapterList();
+      if (chapters.length === 0){
+        renderError(`Tidak ada file .md ditemukan di folder "${CHAPTERS_DIR}".`, true);
+        return;
+      }
+      renderNav();
+
+      const progress = loadProgress();
+      let startIndex = 0;
+      if (!forceReload && progress.lastIndex != null && chapters[progress.lastIndex]){
+        startIndex = progress.lastIndex;
+      }
+      loadChapter(startIndex);
+    } catch (e){
+      const msg = e.message === "RATE_LIMIT"
+        ? "GitHub API sedang membatasi permintaan tanpa autentikasi. Coba lagi dalam beberapa menit."
+        : "Tidak bisa mengambil daftar bab dari repository GitHub.";
+      renderError(msg, true);
+    }
+  }
+
+  init(false);
+})();
+</script>
+</body>
+</html>

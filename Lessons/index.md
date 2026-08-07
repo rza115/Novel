@@ -11,6 +11,7 @@ Indeks "pertanyaan reflektif" atau makna implisit per bab — bukan moral ekspli
 | 004 | loneliness.md | Apakah kesepian adalah "kosong" (tidak ada apa-apa) atau "seharusnya ada" (tahu bahwa sesuatu seharusnya ada tapi tidak ada) — dan kenapa kucing tidur di bangku kosong tanpa sedih? |
 | 005 | education.md | Apakah "belajar" adalah duduk diam dan lihat ke depan, atau melihat ke luar dan penasaran — dan kenapa di luar jendela tidak ada bel? |
 | 006 | friendship.md | Apakah "teman" adalah kata manusia untuk bau yang familiar — dan kenapa manusia butuh kata untuk hal yang kucing lakukan tanpa kata? |
+| 007 | death.md | Apakah ritual kematian adalah untuk yang mati, atau untuk yang hidup yang butuh kata dan tindakan untuk menerima "tidak ada"? |
 
 ## Cara Pakai
 Tiap kali bab baru selesai, tambahkan barisnya di sini DAN update file lesson terkait (mis. `ego.md`) dengan referensi ke bab tersebut. Ini membantu memastikan tema tidak diulang dengan cara yang persis sama.

@@ -43,6 +43,13 @@ Motif atau simbol berulang yang bisa memperkuat kesatuan tematik antar bab (opsi
 - **Potensi muncul lagi:** Bau rumah (familiar vs asing), bau manusia yang berubah (tadinya familiar, lalu asing — pertemanan yang berubah), bau tempat (gang vs pasar vs taman) — bisa muncul dengan variasi makna "koneksi yang tidak bisa dipalsukan."
 - **Catatan keluar pola:** Bab 1–5 semuanya tentang "batas" (kursi, piring, ambang, bangku, jendela). Bab 6 sengaja keluar dari pola ini — "bau" adalah simbol tentang koneksi/identitas, bukan batas. Ini menjaga pola tetap hidup sekaligus mengajukan pertanyaan baru: kalau manusia butuh kata untuk hal yang kucing lakukan tanpa kata, apakah kata itu lebih dekat ke "batas" atau ke "koneksi"?
 
+### 7. Gundukan Tanah — Batas Tanpa Fungsi (Kematian)
+- **Bab kemunculan:** 007 ("Hilang")
+- **Makna:** Batas antara "ada" dan "tidak ada" yang bisa disentuh tapi tidak bisa ditembus. Gundukan diciptakan manusia untuk sesuatu yang sudah tidak bisa melintas — tubuh yang sudah tidak bergerak. Berbeda dari semua simbol sebelumnya: gundukan tidak menentukan siapa dapat apa (kursi), tidak menentukan konsumsi (piring), bukan batas kebaikan (ambang), bukan batas kehadiran (bangku), bukan batas keinginan (jendela), bukan koneksi (bau). Gundukan adalah batas yang **tidak punya fungsi** — manusia membuat batas untuk sesuatu yang sudah tidak membutuhkan batas.
+- **Narator sadar secara eksplisit?** Tidak. Narator mengamati gundukan secara fisik (tanah yang digali, ditutup, sedikit lebih tinggi) dan mengendus bau yang tidak utuh. Tidak pernah menyebut "gundukan" sebagai simbol kematian. Makna simbolik murni untuk pembaca.
+- **Potensi muncul lagi:** Gundukan lain di taman (hewan lain yang dikubur), kuburan manusia yang lebih formal (kontras dengan gundukan sederhana), tanah yang digali untuk alasan lain — bisa muncul dengan variasi makna "batas untuk yang tidak bisa melintas."
+- **Catatan ironi:** Kucing tidur di dekat gundukan tanpa tahu kenapa. Manusia membuat gundukan tanpa kucing paham maksudnya. Keduanya melakukan sesuatu, tapi keduanya tidak tahu kenapa — pertanyaan tersisa: apakah ritual kematian adalah untuk yang mati, atau untuk yang hidup?
+
 ## Pola/Benang Merah yang Mulai Terlihat
 
 Lima simbol pertama (Bab 1–5) **semuanya tentang batas**:

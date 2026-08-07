@@ -60,7 +60,7 @@ Format per tokoh:
 - **Peran sosial:** Kucing liar lain di gang (bukan manusia — hewan lain yang jadi bagian dunia si kucing)
 - **Kebiasaan yang diamati kucing:** Lebih tua, bulu kusam, telinga sobek di satu sisi, gerakan lebih lambat. Dulu berebut makanan dengan si kucing (mendesis, menjaga jarak, menunggu giliran). Sekarang kadang berbagi — meninggalkan sisa, atau menunggu giliran saat si kucing makan. Tidak selalu mulus — kadang masih mendesis, berebut, menggeram saat terlalu dekat dengan makanannya. Tidur di bawah pagar, tidak jauh dari tempat si kucing tidur (di atas karung).
 - **Tema yang dia wakili:** Pertemanan — koneksi tanpa kata, lewat bau yang familiar dan berbagi yang kadang terjadi
-- **Perkembangan:** Bab 006 = perkenalan. Dulu bersaing, sekarang kadang berbagi — perubahan yang kucing tidak tahu kapan mulainya. Belum ada perubahan lebih lanjut.
+- **Perkembangan:** Bab 006 = perkenalan. Dulu bersaing, sekarang kadang berbagi — perubahan yang kucing tidak tahu kapan mulainya. **Bab 007 = kematian.** Kucing Tua ditemukan tidak bergerak di pojok taman, dikubur manusia. Bau yang familiar berubah menjadi tidak utuh. Tempat tidur di bawah pagar kosong.
 
 ---
 

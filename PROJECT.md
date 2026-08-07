@@ -27,6 +27,7 @@ _(belum ditentukan)_
 | 004 | Kosong | Kesepian | Taman | draft |
 | 005 | Jendela | Pendidikan | Sekolah | draft |
 | 006 | Bau | Pertemanan | Gang sempit (basis si kucing) | draft |
+| 007 | Hilang | Kematian | Taman — pojok dekat pagar | draft |
 
 ## Catatan Terbuka / Keputusan Tertunda
 
