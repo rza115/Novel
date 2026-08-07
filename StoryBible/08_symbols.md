@@ -2,7 +2,7 @@
 
 Motif atau simbol berulang yang bisa memperkuat kesatuan tematik antar bab (opsional tapi kuat kalau dipakai konsisten).
 
-## Simbol yang Sudah Muncul (Bab 001–004)
+## Simbol yang Sudah Muncul (Bab 001–006)
 
 ### 1. Kursi — Hierarki/Status
 - **Bab kemunculan:** 001 ("Kursi yang Lebih Tinggi")
@@ -29,9 +29,23 @@ Motif atau simbol berulang yang bisa memperkuat kesatuan tematik antar bab (opsi
 - **Potensi muncul lagi:** Bangku di sekolah (siapa duduk sendiri, siapa duduk berkelompok), bangku di rumah (bangku tamu yang kosong), bangku di pinggir jalan — bisa muncul dengan variasi makna "kehadiran vs kesepian."
 - **Catatan subversi:** Bab 1–3 simbol "batas" yang **berfungsi** (kursi menentukan hierarki, piring menentukan konsumsi, ambang menentukan kebaikan). Bab 4 simbol "batas" yang **tidak berfungsi** (bangku tidak menentukan kesepian). Ini menjaga pola tetap hidup sekaligus mengajukan pertanyaan baru: kalau batas tidak menentukan perasaan, apa yang menentukan?
 
+### 5. Jendela — Batas yang Menciptakan Keinginan
+- **Bab kemunculan:** 005 ("Jendela")
+- **Makna:** Batas yang transparan — bisa dilihat tembus, tapi tidak bisa dilewati. Berbeda dari kursi (batas fisik tetap), piring (batas sekali pakai), ambang (batas bisa dilangkapi tapi tidak boleh), bangku (batas tidak menentukan perasaan). Jendela adalah batas yang **membuat ingin** — karena bisa dilihat tapi tidak bisa dicapai. Anak ingin ke luar, kucing ingin tahu apa di dalam. Keduanya penasaran, keduanya tidak bisa pindah sisi.
+- **Narator sadar secara eksplisit?** Tidak. Narator mengamati jendela secara fisik (kaca yang memisahkan luar dan dalam) dan bingung dengan konsep "belajar" yang terjadi di dalam. Tidak pernah menyebut "jendela" sebagai simbol. Makna simbolik murni untuk pembaca.
+- **Potensi muncul lagi:** Jendela rumah (siapa melihat keluar, siapa melihat ke dalam), jendela toko (barang yang bisa dilihat tapi tidak bisa diambil), jendela mobil (dunia yang lewat tanpa bisa disentuh) — bisa muncul dengan variasi makna "batas yang membuat ingin."
+- **Catatan perluasan pola "batas":** Bab 1–3 = batas yang berfungsi (menentukan siapa dapat apa). Bab 4 = batas yang tidak berfungsi (tidak menentukan perasaan). Bab 5 = batas yang menciptakan keinginan (transparan tapi tidak bisa dilewati). Pola "batas" terus berkembang, bukan sekadar diulang.
+
+### 6. Bau — Koneksi/Identitas (Keluar dari Pola "Batas")
+- **Bab kemunculan:** 006 ("Bau")
+- **Makna:** Cara kucing mengenali "siapa" — bau yang familiar vs bau yang asing. Familiar berarti aman, bisa didekati, bisa ditiduri di dekatnya. Asing berarti waspada. Kucing mengenali siapa lewat bau, bukan lewat kata. Kontras dengan kata "teman" manusia yang bisa dipalsukan — kucing tidak bisa memverifikasi dengan bau apakah kata itu berarti berbagi. **Sengaja keluar dari pola "batas"** — ini simbol tentang koneksi/identitas, bukan batas. Variasi di bab pertengahan.
+- **Narator sadar secara eksplisit?** Sebagian. Narator secara eksplisit menyebut "di dunia kucing, tidak ada kata 'teman'" dan "kucing mengenali siapa lewat bau" — sadar pada level naluri/fenomenologis. Tapi tidak menyebut "bau" sebagai simbol pertemanan. Makna simbolik murni untuk pembaca.
+- **Potensi muncul lagi:** Bau rumah (familiar vs asing), bau manusia yang berubah (tadinya familiar, lalu asing — pertemanan yang berubah), bau tempat (gang vs pasar vs taman) — bisa muncul dengan variasi makna "koneksi yang tidak bisa dipalsukan."
+- **Catatan keluar pola:** Bab 1–5 semuanya tentang "batas" (kursi, piring, ambang, bangku, jendela). Bab 6 sengaja keluar dari pola ini — "bau" adalah simbol tentang koneksi/identitas, bukan batas. Ini menjaga pola tetap hidup sekaligus mengajukan pertanyaan baru: kalau manusia butuh kata untuk hal yang kucing lakukan tanpa kata, apakah kata itu lebih dekat ke "batas" atau ke "koneksi"?
+
 ## Pola/Benang Merah yang Mulai Terlihat
 
-Keempat simbol ini **semuanya tentang batas**:
+Lima simbol pertama (Bab 1–5) **semuanya tentang batas**:
 
 | Simbol | Jenis batas | Konteks | Berfungsi? |
 |---|---|---|---|
@@ -39,10 +53,11 @@ Keempat simbol ini **semuanya tentang batas**:
 | Piring | Batas konsumsi | Kapan "cukup" berhenti, kapan "lebih" dimulai | Ya — menentukan konsumsi |
 | Ambang | Batas kebaikan | Sampai mana "baik" boleh masuk | Ya — menentukan kebaikan |
 | Bangku | Batas kehadiran | Siapa ada, siapa tidak | **Tidak** — tidak menentukan perasaan (subversi) |
+| Jendela | Batas keinginan | Bisa dilihat tembus, tapi tidak bisa dilewati | **Menciptakan** — membuat ingin (perluasan) |
 
 Pola yang muncul: **manusia punya batas untuk hal-hal yang di dunia kucing tidak punya batas.** Di dunia kucing, posisi ditentukan oleh kekuatan langsung (tidak ada kursi), konsumsi ditentukan oleh perut (tidak ada piring yang dibuang), kebaikan tidak punya kata (tidak ada ambang — hanya aman/tidak aman). Manusia membuat batas yang tidak ada di alam, lalu hidup di dalam batas itu — kadang tanpa menyadari batas itu ada.
 
-Ini bisa jadi benang merah tematik yang berkembang sepanjang novel. Tapi tidak perlu dipaksakan — biarkan muncul organik dari bab-bab berikutnya.
+**Bab 6 keluar dari pola "batas":** Simbol "bau" (Bab 6) bukan tentang batas — ini tentang koneksi/identitas. Kucing mengenali siapa lewat bau (familiar vs asing), bukan lewat kata. Ini variasi yang disengaja di bab pertengahan, sesuai catatan "Simbol Berikutnya" di bawah ("Kalau keluar dari pola: simbol berikutnya bisa tentang sesuatu yang sama sekali berbeda"). Pola "batas" tetap jadi benang merah Bab 1–5, tapi tidak dipaksakan di setiap bab — biarkan muncul organik.
 
 ## Objek/Tempat yang Berulang Muncul
 
@@ -57,6 +72,7 @@ _(belum ada objek/tempat yang muncul berulang di lebih dari satu bab, selain kam
 - Apakah pola "batas" akan terus jadi benang merah, atau simbol berikutnya bisa keluar dari pola ini?
   - Kalau pola "batas" terus: simbol berikutnya mungkin tentang batas waktu (jam kerja, jam sekolah), batas teritori (pagar, gerbang), batas pengetahuan (siapa tahu, siapa tidak).
   - Kalau keluar dari pola: simbol berikutnya bisa tentang sesuatu yang sama sekali berbeda — misalnya "bayangan" (identitas vs penampilan), "suara" (yang terdengar vs yang tidak), "jalan" (rute vs tujuan).
+- **Keputusan Bab 6:** Keluar dari pola "batas" — simbol "bau" (koneksi/identitas, bukan batas). Ini variasi yang disengaja di bab pertengahan. Pola "batas" tetap jadi benang merah Bab 1–5, tapi tidak dipaksakan di setiap bab.
 - Tidak memaksakan ide simbol baru — biarkan muncul organik dari bab-bab mendatang. Catatan ini hanya untuk membantu mengenali pola ketika muncul, bukan untuk menentukan simbol sebelum bab ditulis.
 
 ## Pertanyaan Panduan

@@ -55,6 +55,13 @@ Format per tokoh:
 - **Tema yang dia wakili:** Kesepian — manusia yang sendirian di tempat ramai, tapi kesepiannya tidak terlihat sebagai kesedihan dari luar
 - **Perkembangan:** Bab 004 = perkenalan. Belum ada perubahan.
 
+## Kucing Tua
+- **Lokasi utama:** Gang sempit — basis si kucing
+- **Peran sosial:** Kucing liar lain di gang (bukan manusia — hewan lain yang jadi bagian dunia si kucing)
+- **Kebiasaan yang diamati kucing:** Lebih tua, bulu kusam, telinga sobek di satu sisi, gerakan lebih lambat. Dulu berebut makanan dengan si kucing (mendesis, menjaga jarak, menunggu giliran). Sekarang kadang berbagi — meninggalkan sisa, atau menunggu giliran saat si kucing makan. Tidak selalu mulus — kadang masih mendesis, berebut, menggeram saat terlalu dekat dengan makanannya. Tidur di bawah pagar, tidak jauh dari tempat si kucing tidur (di atas karung).
+- **Tema yang dia wakili:** Pertemanan — koneksi tanpa kata, lewat bau yang familiar dan berbagi yang kadang terjadi
+- **Perkembangan:** Bab 006 = perkenalan. Dulu bersaing, sekarang kadang berbagi — perubahan yang kucing tidak tahu kapan mulainya. Belum ada perubahan lebih lanjut.
+
 ---
 
 _(duplikasi blok di atas untuk tiap tokoh pendukung. Contoh tokoh yang mungkin relevan dengan setting gang/rumah/sekolah/taman/pasar — hapus/sesuaikan:)_

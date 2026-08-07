@@ -6,15 +6,15 @@ Status dan progres proyek. Update tiap ada perubahan berarti.
 _(belum ditentukan)_
 
 ## Status Saat Ini
-🟢 Tahap: Penulisan bab — Bab 1–5 draft selesai.
+🟢 Tahap: Penulisan bab — Bab 1–6 draft selesai.
 
 ## Milestone
 
 - [ ] StoryBible lengkap (9 file) disetujui
 - [ ] Characters/narrator.md final
 - [ ] Minimal 10 topik di Observations/ terisi
-- [x] Bab 1–5 ditulis
-- [ ] Bab 1–5 direview (consistency + style + philosophy)
+- [x] Bab 1–6 ditulis
+- [ ] Bab 1–6 direview (consistency + style + philosophy)
 - [ ] Struktur volume/jumlah bab total ditentukan
 
 ## Log Bab
@@ -26,6 +26,7 @@ _(belum ditentukan)_
 | 003 | Ambang | Kebaikan | Rumah penduduk sekitar pasar | draft |
 | 004 | Kosong | Kesepian | Taman | draft |
 | 005 | Jendela | Pendidikan | Sekolah | draft |
+| 006 | Bau | Pertemanan | Gang sempit (basis si kucing) | draft |
 
 ## Catatan Terbuka / Keputusan Tertunda
 

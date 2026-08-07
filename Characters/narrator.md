@@ -19,7 +19,8 @@ _(isi — rute hariannya, jam-jam aktifnya, tempat favorit tidur)_
 - _(isi — apakah ada 1-2 manusia yang diam-diam baik padanya, kasih makan sesekali, tanpa dia "milik" mereka?)_
 
 ## Relasi dengan Hewan Lain
-_(isi — kucing/anjing/burung lain yang jadi bagian dunianya)_
+- **Kucing Tua** — kucing liar lain di gang sempit (basis si kucing). Lebih tua, bulu kusam, telinga sobek di satu sisi. Dulu mereka berebut makanan (mendesis, menjaga jarak, menunggu giliran). Sekarang kadang berbagi — Kucing Tua meninggalkan sisa, atau si kucing mundur setelah makan setengah agar Kucing Tua bisa makan sisanya. Tidak selalu mulus — kadang masih mendesis, berebut, menggeram. Tapi bau Kucing Tua sudah familiar bagi si kucing — tidak perlu berpikir untuk mengenalinya. Mereka tidur di tempat yang berbeda tapi tidak jauh (kucing di atas karung, Kucing Tua di bawah pagar). Ini satu-satunya relasi di mana kucing bukan sekadar observer, tapi juga partisipan. (Bab 006)
+- _(isi — kucing/anjing/burung lain yang jadi bagian dunianya)_
 
 ## Ketakutan / Kelemahan
 _(isi — supaya dia gak jadi observer yang terlalu sempurna/tanpa taruhan pribadi. Mis: takut anjing tertentu, musim hujan, dll)_

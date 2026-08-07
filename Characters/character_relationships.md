@@ -26,3 +26,8 @@ Berguna supaya "dunia kecil" ini terasa hidup dan konsisten: siapa kenal siapa, 
 - Hubungan: Keluarga (ibu dan anak — diasumsikan dari suara yang terdengar lewat pintu tertutup)
 - Dinamika yang teramati kucing: Perdebatan internal tentang batas kebaikan ke kucing liar. Ibu Ambang (atau suara perempuan dewasa) berkata "Jangan biarkan masuk"; anak menjawab "Dia cuma mau makan, Ma." Kucing hanya menangkap potongan suara lewat pintu tertutup — tidak melihat wajah, tidak tahu siapa mereka. Tapi terlihat bahwa kebaikan ke hewan liar punya batas yang dinegosiasikan di dalam rumah, bukan di luar. Yang diperdebatkan tidak terlihat; yang diberikan (mangkuk) terlihat.
 - Bab-bab di mana dinamika ini muncul: 003
+
+**Narator (si kucing) ↔ Kucing Tua**
+- Hubungan: Sesama kucing liar di gang yang sama (bukan keluarga, bukan pasangan — hanya dua kucing yang berbagi teritori dan kadang makanan)
+- Dinamika yang teramati kucing: Dulu mereka berebut makanan — mendesis, menjaga jarak, menunggu giliran. Tidak ada yang berbagi. Sekarang kadang berbagi: Kucing Tua meninggalkan sisa, atau si kucing mundur setelah makan setengah agar Kucing Tua bisa makan sisanya. Tidak selalu mulus — kadang masih mendesis, berebut, menggeram saat terlalu dekat dengan makanan. Tapi bau Kucing Tua sudah familiar bagi si kucing — tidak perlu berpikir untuk mengenalinya. Mereka tidur di tempat yang berbeda tapi tidak jauh (kucing di atas karung, Kucing Tua di bawah pagar) — dua tempat tidur dengan jarak yang tidak perlu dijaga. Ini relasi yang paling personal bagi narator — satu-satunya relasi di mana kucing bukan sekadar observer, tapi juga partisipan.
+- Bab-bab di mana dinamika ini muncul: 006
